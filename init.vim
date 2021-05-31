@@ -39,20 +39,15 @@ let g:cmake_build_dir_location = "build"
 " GitGutter
 let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
-let g:gitgutter_highlight_lines = 1
 let g:gitgutter_highlight_linenrs = 1
 let g:gitgutter_async = 1
 set updatetime=100
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
-highlight GitGutterAddLine    guibg=#009900 ctermbg=2
-highlight GitGutterChangeLine guibg=#bbbb00 ctermbg=3
-highlight GitGutterDeleteLine guibg=#ff2222 ctermbg=1
-highlight GitGutterChangeDeleteLine guibg=#ff2222 ctermbg=1
-highlight GitGutterAddLineNr    guibg=#009900 ctermbg=2
-highlight GitGutterChangeLineNr guibg=#bbbb00 ctermbg=3
-highlight GitGutterDeleteLineNr guibg=#ff2222 ctermbg=1
+highlight GitGutterAddLineNr    guifg=#009900 ctermfg=2
+highlight GitGutterChangeLineNr guifg=#bbbb00 ctermfg=3
+highlight GitGutterDeleteLineNr guifg=#ff2222 ctermfg=1
 highlight GitGutterChangeDeleteLineNr guibg=#ff2222 ctermbg=1
 highlight link GitGutterChangeLine DiffText
 highlight link GitGutterChangeLineNr Underlined
