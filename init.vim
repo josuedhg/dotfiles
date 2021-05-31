@@ -23,12 +23,15 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 
 Plug 'cdelledonne/vim-cmake'
+Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
 
 " General
 syntax enable
 set background=dark
 set number relativenumber
+colorscheme palenight
+let g:lightline = { 'colorscheme': 'palenight' }
 
 " Cmake
 let g:cmake_build_dir_location = "build"
@@ -83,7 +86,7 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 " AirLine
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
+let g:airline_theme = "palenight"
 
 " Ale
 nnoremap <silent> <C-k><C-D> :ALEGoToDefinition<CR>
