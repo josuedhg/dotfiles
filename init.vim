@@ -2,9 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'kassio/neoterm'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'zchee/deoplete-clang'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -28,9 +25,11 @@ call plug#end()
 
 " General
 syntax enable
+set spell spelllang=en_us
 set background=dark
 set number relativenumber
 colorscheme palenight
+autocmd BufWritePre * %s/\s\+$//e
 let g:lightline = { 'colorscheme': 'palenight' }
 
 " Cmake
@@ -57,11 +56,6 @@ let g:neoterm_default_mod='belowright' " open terminal in bottom split
 let g:neoterm_size=16 " terminal split size
 let g:neoterm_autoscroll=1 " scroll to the bottom when running a command
 let g:neoterm_size = 10
-
-" Deoplate
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
-let g:deoplete#sources#clang#clang_header = "/usr/lib/clang"
 
 " Tagbar
 let g:tagbar_position = "left"
@@ -90,7 +84,9 @@ nnoremap <silent> <C-k><C-S> :ALESymbolSearch
 nnoremap <silent> <C-k><C-H> :ALEHover<CR>
 nnoremap <silent> <C-k><C-F> :ALEFindReferences<CR>
 nnoremap <silent> <C-k><C-I> :ALEImport<CR>
-let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit"]}
+let g:ale_lint_delay = 100
+let g:ale_completion_enabled = 1
+let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit", "pyls"]}
 let g:ale_fixers = {"python": ["nayvy#ale_fixer", "autoimport", "black", "isort"]}
 let g:nayvy_pyproject_root_markers = [
   \ 'pyproject.toml',
