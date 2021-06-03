@@ -87,6 +87,8 @@ nnoremap <silent> <C-k><C-F> :ALEFindReferences<CR>
 nnoremap <silent> <C-k><C-I> :ALEImport<CR>
 let g:ale_lint_delay = 100
 let g:ale_completion_enabled = 1
+let g:ale_floating_preview = 1
+let g:ale_floating_window_border = []
 let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit", "pyls"]}
 let g:ale_fixers = {"python": ["nayvy#ale_fixer", "autoimport", "black", "isort"]}
 let g:nayvy_pyproject_root_markers = [
