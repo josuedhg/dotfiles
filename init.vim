@@ -8,6 +8,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " python autoimport
 Plug 'relastle/vim-nayvy'
 
@@ -78,6 +80,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "palenight"
 
+" Deoplate
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('sources', {
+\ '_': ['ale', 'ultisnips'],
+\})
+
 " Ale
 nnoremap <silent> <C-k><C-D> :ALEGoToDefinition<CR>
 nnoremap <silent> <C-k><C-R> :ALERename<CR>
@@ -85,10 +93,6 @@ nnoremap <silent> <C-k><C-S> :ALESymbolSearch
 nnoremap <silent> <C-k><C-H> :ALEHover<CR>
 nnoremap <silent> <C-k><C-F> :ALEFindReferences<CR>
 nnoremap <silent> <C-k><C-I> :ALEImport<CR>
-let g:ale_lint_delay = 100
-let g:ale_completion_enabled = 1
-let g:ale_floating_preview = 1
-let g:ale_floating_window_border = []
 let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit", "pyls"]}
 let g:ale_fixers = {"python": ["nayvy#ale_fixer", "autoimport", "black", "isort"]}
 let g:nayvy_pyproject_root_markers = [
