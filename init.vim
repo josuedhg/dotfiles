@@ -87,12 +87,13 @@ call deoplete#custom#option('sources', {
 \})
 
 " Ale
-nnoremap <silent> <C-k><C-D> :ALEGoToDefinition<CR>
-nnoremap <silent> <C-k><C-R> :ALERename<CR>
-nnoremap <silent> <C-k><C-S> :ALESymbolSearch
-nnoremap <silent> <C-k><C-H> :ALEHover<CR>
-nnoremap <silent> <C-k><C-F> :ALEFindReferences<CR>
-nnoremap <silent> <C-k><C-I> :ALEImport<CR>
+nnoremap <silent> gd :ALEGoToDefinition -split<CR>
+nnoremap <silent> gy :ALEGoToTypeDefinition -split<CR>
+nnoremap <silent> gc :ALERename<CR>
+nnoremap <silent> gs :ALESymbolSearch<space>
+nnoremap <silent> gh :ALEHover<CR>
+nnoremap <silent> gr :ALEFindReferences<CR>
+nnoremap <silent> gI :ALEImport<CR>
 let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit", "pyls"]}
 let g:ale_fixers = {"python": ["nayvy#ale_fixer", "autoimport", "black", "isort"]}
 let g:nayvy_pyproject_root_markers = [
