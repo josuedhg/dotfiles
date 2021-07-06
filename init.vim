@@ -104,5 +104,5 @@ let g:nayvy_pyproject_root_markers = [
 \ ]
 
 " UltiSnips
-let g:UltiSnipsJumpForwardTrigger="<c-right>"
-let g:UltiSnipsJumpBackwardTrigger="<c-left>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
