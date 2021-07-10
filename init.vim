@@ -35,6 +35,21 @@ colorscheme palenight
 autocmd BufWritePre * %s/\s\+$//e
 let g:lightline = { 'colorscheme': 'palenight' }
 
+" Termdebug
+packadd termdebug
+nnoremap <silent> gb :Termdebug<space>
+function! Info(...)
+  if !exists(":Over")
+    return
+  endif
+  let param = ''
+  for val in a:000
+    let param = param . val
+  endfor
+  call TermDebugSendCommand('info ' . param)
+endfunc
+command -nargs=+ Info :call Info(<q-args>)
+
 " Cmake
 let g:cmake_build_dir_location = "build"
 
