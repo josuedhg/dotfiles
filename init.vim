@@ -34,6 +34,10 @@ set number relativenumber
 colorscheme palenight
 autocmd BufWritePre * %s/\s\+$//e
 let g:lightline = { 'colorscheme': 'palenight' }
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Termdebug
 packadd termdebug
@@ -103,10 +107,10 @@ call deoplete#custom#option('sources', {
 
 " Ale
 nnoremap <silent> gd :ALEGoToDefinition -split<CR>
-nnoremap <silent> gy :ALEGoToTypeDefinition -split<CR>
-nnoremap <silent> gc :ALERename<CR>
+nnoremap <silent> gt :ALEGoToTypeDefinition -split<CR>
+nnoremap <silent> <leader>rn :ALERename<CR>
 nnoremap <silent> gs :ALESymbolSearch<space>
-nnoremap <silent> gh :ALEHover<CR>
+nnoremap <silent> K :ALEHover<CR>
 nnoremap <silent> gr :ALEFindReferences<CR>
 nnoremap <silent> gI :ALEImport<CR>
 let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit", "pyls"]}
