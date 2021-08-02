@@ -27,6 +27,7 @@ call plug#end()
 
 " General
 syntax enable
+set clipboard+=unnamedplus
 set spell spelllang=en_us
 set dictionary+=/usr/share/dict/words
 set background=dark
