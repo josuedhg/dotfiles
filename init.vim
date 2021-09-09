@@ -42,18 +42,22 @@ noremap <Right> <Nop>
 
 " Termdebug
 packadd termdebug
+let g:termdebug_use_prompt = 1
 nnoremap <silent> gb :Termdebug<space>
-function! Info(...)
+function! GDBCommand(...)
   if !exists(":Over")
     return
   endif
   let param = ''
   for val in a:000
-    let param = param . val
+    let param = param . ' ' . val
   endfor
-  call TermDebugSendCommand('info ' . param)
+  call TermDebugSendCommand(param)
 endfunc
-command -nargs=+ Info :call Info(<q-args>)
+
+command -nargs=+ Info :call GDBCommand('info', <f-args>)
+command -nargs=+ Thread :call GDBCommand('thread', <f-args>)
+command -nargs=+ BreakCustom :call GDBCommand('break', <f-args>)
 
 " Cmake
 let g:cmake_build_dir_location = "build"
