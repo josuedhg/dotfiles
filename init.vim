@@ -26,6 +26,8 @@ Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
 
 " General
+set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
+let mapleader = " "
 syntax enable
 set clipboard+=unnamedplus
 set spell spelllang=en_us
@@ -55,9 +57,30 @@ function! GDBCommand(...)
   call TermDebugSendCommand(param)
 endfunc
 
+function! GDBMemory(...)
+  if !exists(':Over')
+    return
+  endif
+  let param = 'x'
+  if a:0 > 2
+    let param = param . '/' . a:1 . ' ' . a:2
+  else
+    let param = param . ' ' . a:1
+  endif
+  call TermDebugSendCommand(param)
+endfunc
+
 command -nargs=+ Info :call GDBCommand('info', <f-args>)
 command -nargs=+ Thread :call GDBCommand('thread', <f-args>)
 command -nargs=+ BreakCustom :call GDBCommand('break', <f-args>)
+command -nargs=* Backtrace :call GDBCommand('backtrace', <f-args>)
+command -nargs=* Up :call GDBCommand('up', <f-args>)
+command -nargs=* Down :call GDBCommand('down', <f-args>)
+command -nargs=* Frame :call GDBCommand('frame', <f-args>)
+command -nargs=+ Set :call GDBCommand('set', <f-args>)
+command -nargs=+ SetVar :call GDBCommand('set var', <f-args>)
+command -nargs=+ Watch :call GDBCommand('watch', <f-args>)
+command -nargs=+ Memory :call GDBCommand(<f-args>)
 
 " Cmake
 let g:cmake_build_dir_location = "build"
@@ -92,7 +115,7 @@ autocmd VimEnter * nested :TagbarOpen
 " NerdTree
 autocmd VimEnter * NERDTree | wincmd p
 let g:NERDTreeWinPos = "right"
-nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
+nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
