@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'kassio/neoterm'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
