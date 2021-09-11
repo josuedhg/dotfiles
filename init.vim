@@ -111,6 +111,7 @@ let g:neoterm_size = 10
 let g:tagbar_position = "left"
 let g:tagbar_width = 30
 autocmd VimEnter * nested :TagbarOpen
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
 " NerdTree
 autocmd VimEnter * NERDTree | wincmd p
