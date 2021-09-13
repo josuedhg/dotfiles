@@ -41,11 +41,15 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+noremap <silent> <leader>bn :bn<CR>
+noremap <silent> <leader>bp :bp<CR>
+noremap <leader>bd :bd<space>
+noremap <silent> <leader>ll :ls<CR>
 
 " Termdebug
 packadd termdebug
 let g:termdebug_use_prompt = 1
-nnoremap <silent> gb :Termdebug<space>
+nnoremap gb :Termdebug<space>
 function! GDBCommand(...)
   if !exists(":Over")
     return
