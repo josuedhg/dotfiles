@@ -147,8 +147,8 @@ nnoremap <silent> <leader>fs :ALEFixSuggest<CR>
 let g:ale_fix_on_save = 1
 let g:ale_c_clangformat_use_local_file = 1
 let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit", "pyls"]}
-let g:ale_fixers = {"python": ["nayvy#ale_fixer", "autoimport", "black", "isort"]}
-let g:ale_fixers = {"c": ["clang-format"]}
+let g:ale_fixers = {"python": ["nayvy#ale_fixer", "autoimport", "black", "isort"],
+		  \ "c": ["clang-format"]}
 let g:nayvy_pyproject_root_markers = [
   \ 'pyproject.toml',
   \ 'setup.py',
