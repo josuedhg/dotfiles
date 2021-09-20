@@ -22,7 +22,9 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 
 Plug 'cdelledonne/vim-cmake'
-Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'drewtempelmeyer/palenight.vim'
+Plug 'cocopon/iceberg.vim'
+
 call plug#end()
 
 " General
@@ -34,9 +36,9 @@ set spell spelllang=en_us
 set dictionary+=/usr/share/dict/words
 set background=dark
 set number relativenumber
-colorscheme palenight
+colorscheme iceberg
 autocmd BufWritePre * %s/\s\+$//e
-let g:lightline = { 'colorscheme': 'palenight' }
+let g:lightline = { 'colorscheme': 'iceberg' }
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -130,7 +132,7 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 " AirLine
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "palenight"
+let g:airline_theme = "iceberg"
 
 " Deoplate
 let g:deoplete#enable_at_startup = 1
