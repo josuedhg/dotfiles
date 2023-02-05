@@ -82,6 +82,7 @@ let g:ale_fixers = {"python": ["nayvy#ale_fixer", "autoimport", "black", "isort"
 		  \ "c": ["clang-format"],
 		  \ "cpp": ["clang-format"]}
 let g:nayvy_pyproject_root_markers = [
+  \ 'manage.py',
   \ 'pyproject.toml',
   \ 'setup.py',
   \ 'setup.cfg',
