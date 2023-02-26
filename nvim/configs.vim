@@ -9,6 +9,7 @@ set background=dark
 set number relativenumber
 colorscheme nord
 autocmd BufWritePre * %s/\s\+$//e
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Termdebug
 packadd termdebug
