@@ -78,7 +78,8 @@ call deoplete#custom#option('sources', {
 
 " Ale
 let g:ale_c_clangformat_use_local_file = 1
-let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit", "pylsp"]}
+let g:ale_linters = {"python": ["flake8", "pydocstyle", "bandit", "pylsp"],
+		   \ "rust": ["analyzer"]}
 let g:ale_fixers = {"python": ["nayvy#ale_fixer", "autoimport", "black", "isort"],
 		  \ "c": ["clang-format"],
 		  \ "cpp": ["clang-format"]}
