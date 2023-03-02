@@ -7,6 +7,7 @@ set spell spelllang=en_us
 set dictionary+=/usr/share/dict/words
 set background=dark
 set number relativenumber
+set scrolloff=16
 colorscheme nord
 autocmd BufWritePre * %s/\s\+$//e
 let g:python3_host_prog = '/usr/bin/python3'
