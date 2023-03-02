@@ -7,6 +7,7 @@ noremap <silent> <leader>bn :bn<CR>
 noremap <silent> <leader>bp :bp<CR>
 noremap <leader>bd :bd<space>
 noremap <silent> <leader>ll :ls<CR>
+tnoremap <Esc> <C-\><C-n>
 
 " Termdebug
 nnoremap gb :Termdebug<space>
