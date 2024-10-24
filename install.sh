@@ -5,6 +5,8 @@ TARGET_CONFIG_FOLDER="$HOME/.config/"
 
 HOME_FOLDER="$PWD/home/"
 
+git submodule update --init
+
 if [ ! -d "$TARGET_CONFIG_FOLDER" ]; then
 	mkdir -p $TARGET_CONFIG_FOLDER
 fi
