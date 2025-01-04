@@ -1,0 +1,16 @@
+#!/bin/env bash
+
+# check if makefile exists
+if [ ! -f Makefile ]; then
+    echo "Makefile not found!"
+    exit 1
+fi
+
+# get include paths
+C_INCLUDES=$(make -p | grep ^C_INCLUDES | awk -F= '{print $2}' | sed "s/^\s//g" |sed "s/ /, /g" | sed -e "s|-I\([a-zA-Z/0-9_]*\)|-I$(pwd)/\1|g")
+C_DEFS="$(make -p | grep ^C_DEFS | awk -F= '{print $2}' | sed "s/^\s//g" |sed "s/ /, /g")"
+
+cat <<EOF > .clangd
+CompileFlags:
+  Add: [$C_INCLUDES, $C_DEFS]
+EOF

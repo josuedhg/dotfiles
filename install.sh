@@ -19,6 +19,13 @@ done
 for config in $(ls $HOME_FOLDER); do
 	if [ ! -d "$HOME/.$config" ]; then
 		ln -sf $HOME_FOLDER/$config $HOME/.$config
+	else
+		for subconfig in $(ls $HOME_FOLDER/$config); do
+			if [ -d "$HOME/$config/$subconfig" ] && [ ! -d "$HOME/.$config/$subconfig" ]; then
+				mkdir -p $HOME/.$config/$subconfig
+			fi
+			cp -r $HOME_FOLDER/$config/$subconfig $HOME/.$config/$subconfig
+		done
 	fi
 done
 

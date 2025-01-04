@@ -1,0 +1,17 @@
+#!/bin/env bash
+
+# check if makefile exists
+if [ ! -f Makefile ]; then
+    echo "Makefile not found!"
+    echo "Please set up project to use Makefile in STM32CubeMX"
+    exit 1
+fi
+
+if ! test -d build; then
+    echo "Project is not built"
+    echo "run make"
+    exit 1
+fi
+
+generate_dotclangd
+generate_commpile_commands_from_makefile
