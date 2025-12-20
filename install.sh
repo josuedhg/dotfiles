@@ -29,4 +29,4 @@ for config in $(ls $HOME_FOLDER); do
 	fi
 done
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it && ~/.bash_it/install.sh --silent --no-modify-config
