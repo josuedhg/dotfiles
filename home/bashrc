@@ -29,6 +29,10 @@ alias vim=nvim
 export EDITOR='nvim'
 export OLLAMA_URL="http://127.0.0.1:11434"
 
+for file in $(find $HOME/.config/bash_completion/ -maxdepth 1 -name '*.bash' -print -quit); do
+  source $file
+done
+
 # shellcheck disable=SC2034
 
 # If not running interactively, don't do anything
