@@ -28,6 +28,7 @@ alias vim=nvim
 
 export EDITOR='nvim'
 export OLLAMA_URL="http://127.0.0.1:11434"
+export STM32_CUBE_PROGRAMMER_DIR=$HOME/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI
 
 for file in $(find $HOME/.config/bash_completion/ -maxdepth 1 -name '*.bash' -print -quit); do
   source $file
